@@ -9,21 +9,23 @@ import io.grpc.ManagedChannelBuilder;
 public class GreetingClient {
 
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Need One argument to work ");
-            return;
-        }
+//        if (args.length == 0) {
+//            System.out.println("Need One argument to work ");
+//            return;
+//        }
 
         ManagedChannel managedChannel = ManagedChannelBuilder
                 .forAddress("localhost", 50051)
                 .usePlaintext()
                 .build();
 
-        switch (args[0]) {
-            case "greet": doGreet(managedChannel); break;
-            default:
-                System.out.println("Keyword Invalid :" + args[0]);
-        }
+//        switch (args[0]) {
+//            case "greet": doGreet(managedChannel); break;
+//            default:
+//                System.out.println("Keyword Invalid :" + args[0]);
+//        }
+
+        doGreet(managedChannel);
 
         System.out.println("Shutting Down");
         managedChannel.shutdown();
